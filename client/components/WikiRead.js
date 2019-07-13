@@ -27,6 +27,8 @@ export default class WikiRead extends Shadow
     {
         const article = await load_article();
 
+        appear();
+
         if ( ! article) {
             this.shadow_root.innerHTML = main_template + error;
             return;
@@ -34,7 +36,5 @@ export default class WikiRead extends Shadow
 
         this.shadow_root.innerHTML = main_template
             + format(article);
-
-        appear();
     }
 }

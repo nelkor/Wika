@@ -40,6 +40,8 @@ export default class WikiEdit extends Shadow
     {
         const article = await load_article();
 
+        appear();
+
         if ( ! article) {
             this.shadow_root.innerHTML = main_template + error;
             return;
@@ -48,8 +50,6 @@ export default class WikiEdit extends Shadow
         this.shadow_root.innerHTML = main_template
             + edit_template
             + format(article);
-
-        appear();
 
         const id = article.id;
 
